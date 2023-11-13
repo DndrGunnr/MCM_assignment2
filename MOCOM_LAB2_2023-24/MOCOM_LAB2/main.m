@@ -1,6 +1,6 @@
 %% Modelling and Control of Manipulator assignment 2: Manipulator Geometry and Direct kinematic
 clc;
-clear;
+%clear;
 close all;
 addpath('include');
 
@@ -12,8 +12,8 @@ addpath('include');
 geom_model = BuildTree();
 
 % Useful initizializations
-numberOfLinks =                     % number of manipulator's links.
-linkType =                          % boolean that specifies two possible link types: Rotational, Prismatic.
+numberOfLinks = 7;                    % number of manipulator's links.
+linkType = 1;                         % boolean that specifies two possible link types: Rotational, Prismatic.
 bri= zeros(3,numberOfLinks);        % Basic vector of i-th link w.r.t. base
 bTi = zeros(4,4,numberOfLinks);     % Trasformation matrix i-th link w.r.t. base
 
