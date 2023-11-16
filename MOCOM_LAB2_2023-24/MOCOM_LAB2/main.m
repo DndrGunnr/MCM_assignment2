@@ -39,7 +39,6 @@ iTj_qd=GetDirectGeometry(qd,geom_model,linkType);
 for i =1:numberOfLinks
     bTi(:,:,i)= GetTransformationWrtBase();
 end
-
 for i= 1:length(linkNumber_i)
     iTj(:,:,i) = GetFrameWrtFrame();
 end
