@@ -22,7 +22,7 @@ iTj = zeros(4,4,1);
 q = [0,0,0,0,0,0,0];
 
 % Q1.1 and Q1.2
-biTei = GetDirectGeometry();
+iTj_q = GetDirectGeometry();
 
 %Q1.3
 for i =1:numberOfLinks
