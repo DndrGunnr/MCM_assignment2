@@ -24,8 +24,11 @@ for i = link_number_i+1:link_number_j
     
 end
 
-uno = [R p];
-due = [uno  0 0 0 1];
-iTj = due;
+%uno = [R p];
+%due = [uno  0 0 0 1];
+%iTj = due;
+iTj(1:3,1:3) = R;
+iTj(1:3,4) = p;
+iTj(4,:) = [0 0 0 1];
 
 end

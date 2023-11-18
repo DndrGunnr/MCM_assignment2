@@ -21,6 +21,7 @@ iTj = geom_model;
 % Initial joint configuration 
 q = [0,0,0,0,0,0,0];
 
+
 % Q1.1 and Q1.2
 %a
 qa=q;
@@ -37,20 +38,21 @@ iTj_qd=GetDirectGeometry(qd,geom_model,linkType);
 
 %% Q1.3
 for i =1:numberOfLinks
-    bTi(:,:,i)= GetTransformationWrtBase();
+    bTi(:,:,i)= GetTransformationWrtBase(geom_model,i);
 end
-for i= 1:length(linkNumber_i)
-    iTj(:,:,i) = GetFrameWrtFrame();
-end
+
+link_i = 1; link_j = 2; %choose the links
+iTj(:,:) = GetFrameWrtFrame(geom_model,link_i,link_j);
 
 for i = 1:numberOfLinks
-    bri(:,i) = GetBasicVectorWrtBase();
+    bri(:,i) = GetBasicVectorWrtBase(geom_model, i);
 end
 
-% Q1.4
+%% Q1.4
 % Hint: use plot3() and line() matlab functions. 
 qi = q;
-qf = [];
+qf = [pi/4 pi/2 -pi/8 -pi/2 pi/4 2/3*pi 0];
+
 numberOfSteps =100;
 
 for i = 1:numberOfSteps
