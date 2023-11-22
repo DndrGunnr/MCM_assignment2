@@ -41,8 +41,8 @@ for i =1:numberOfLinks
     bTi(:,:,i)= GetTransformationWrtBase(geom_model,i);
 end
 
-link_i = 1; link_j = 2; %choose the links
-iTj(:,:) = GetFrameWrtFrame(geom_model,link_i,link_j);
+link_i = 4; link_j = 5; %choose the links
+iTj_t(:,:) = GetFrameWrtFrame(geom_model,link_i,link_j);
 
 for i = 1:numberOfLinks
     bri(:,i) = GetBasicVectorWrtBase(geom_model, i);
@@ -50,12 +50,18 @@ end
 
 %% Q1.4
 % Hint: use plot3() and line() matlab functions. 
+close all;
+%1.4.a
 qi = q;
 qf = [pi/4 pi/2 -pi/8 -pi/2 pi/4 2/3*pi 0];
 
-numberOfSteps =100;
-
-for i = 1:numberOfSteps
-%-------------------MOVE----------------------%
-    
-end
+plot_link_chain(qi,qf,iTj_q,linkType)
+%1.4.b
+qi=[0,pi/2,0,-pi/2,0,0,0];
+qf=[0,0,0,0,0,0,0];
+plot_link_chain(qi,qf,iTj_q,linkType)
+%1.4.c
+qi=[1.3,0.1,0.1,1.0,0.2,0.3,1.3];
+qf=[2,2,2,2,2,2,2];
+plot_link_chain(qi,qf,iTj_q,linkType)
+%1.4.d

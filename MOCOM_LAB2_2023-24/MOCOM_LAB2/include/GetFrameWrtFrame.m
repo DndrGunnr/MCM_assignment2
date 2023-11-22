@@ -1,4 +1,4 @@
-function [iTj]=GetFrameWrtFrame(linkNumber_i, linkNumber_j,biTei)
+function [iTj]=GetFrameWrtFrame(biTei,linkNumber_i, linkNumber_j)
 %%% GetFrameWrtFrame function 
 % inputs : 
 % linkNumber_i : number of ith link 
@@ -10,14 +10,14 @@ function [iTj]=GetFrameWrtFrame(linkNumber_i, linkNumber_j,biTei)
 % configuration described in biTei
 
 p=0;
-R = ones(size(biTei)-1);
+R = eye(3);
 
-for i = link_number_i+1:link_number_j
+for i = (linkNumber_i+1):linkNumber_j
 
     T = biTei(:,:,i);
 
     pi = T(1:end-1,end);
-    p = p+pi; %vettore da i a j
+    p = p+R*pi; %vettore da i a j
 
     Ri = T(1:end-1,1:end-1);
     R = R * Ri;

@@ -5,9 +5,8 @@ function [r]=GetBasicVectorWrtBase(biTei, linkNumber)
 % linkNumber: link number
 % output
 % r : basic vector from frame i to the robot base frame <0>
-r=[0;0;0];
-for i=1:linkNumber
-    r=r+biTei(1:3,4,i);
-end
+
+M=GetTransformationWrtBase(biTei,linkNumber);
+r=M(1:3,4);
 
 end
