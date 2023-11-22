@@ -54,6 +54,7 @@ close all;
 %1.4.a
 qi = q;
 qf = [pi/4 pi/2 -pi/8 -pi/2 pi/4 2/3*pi 0];
+iTj_q=geom_model;
 
 plot_link_chain(qi,qf,iTj_q,linkType)
 %1.4.b
