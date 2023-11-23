@@ -9,8 +9,8 @@ function [bTi] = GetTransformationWrtBase(biTei, linkNumber)
 % the configuration identified by biTei.
 bTi=eye(4);
 for i=1:linkNumber
+    bTi(1:3,4)=bTi(1:3,4)+bTi(1:3,1:3)*biTei(1:3,4,i);
     bTi(1:3,1:3)=bTi(1:3,1:3)*biTei(1:3,1:3,i);
-    bTi(1:3,4)=bTi(1:3,4)+biTei(1:3,4,i);
 end
 
 end

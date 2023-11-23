@@ -9,15 +9,15 @@ function [iTj]=GetFrameWrtFrame(linkNumber_i, linkNumber_j,biTei)
 % iTj : transformationMatrix in between link i and link j for the
 % configuration described in biTei
 
-p=0;
-R = ones(size(biTei)-1);
+p=[0;0;0];
+R = eye(3);
 
-for i = link_number_i+1:link_number_j
+for i = linkNumber_i+1:linkNumber_j
 
     T = biTei(:,:,i);
 
     pi = T(1:end-1,end);
-    p = p+pi; %vettore da i a j
+    p = p+R*pi; %vettore da i a j
 
     Ri = T(1:end-1,1:end-1);
     R = R * Ri;
