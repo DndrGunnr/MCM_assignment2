@@ -16,11 +16,11 @@ numberOfLinks = 7;                    % number of manipulator's links.
 linkType = zeros(1,numberOfLinks);                         % boolean that specifies two possible link types: Rotational, Prismatic.
 bri= zeros(3,numberOfLinks);        % Basic vector of i-th link w.r.t. base
 bTi = zeros(4,4,numberOfLinks);     % Trasformation matrix i-th link w.r.t. base
-
+%%
 iTj = geom_model;
 % Initial joint configuration 
 q = [0,0,0,0,0,0,0];
-
+%%
 
 % Q1.1 and Q1.2
 %a
@@ -40,10 +40,10 @@ iTj_qd=GetDirectGeometry(qd,geom_model,linkType);
 for i =1:numberOfLinks
     bTi(:,:,i)= GetTransformationWrtBase(geom_model,i);
 end
-
-link_i = 4; link_j = 5; %choose the links
-iTj_t(:,:) = GetFrameWrtFrame(geom_model,link_i,link_j);
-
+%%
+link_i = 1; link_j = 2; %choose the links
+iTj(:,:) = GetFrameWrtFrame(link_i,link_j,geom_model);
+%%
 for i = 1:numberOfLinks
     bri(:,i) = GetBasicVectorWrtBase(geom_model, i);
 end
