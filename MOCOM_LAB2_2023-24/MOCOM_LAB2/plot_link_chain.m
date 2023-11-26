@@ -17,7 +17,7 @@ function plot_link_chain(qi,qf,iTj_q,linkType)
         end
     end
     %init plot
-    h=plot3(0,0,0);
+    h=plot3(0,0,0,'-o','Color','b','MarkerSize',10,'MarkerFaceColor','#D9FFFF');
     grid on;
     for i=1:numberOfSteps
         % Update line data

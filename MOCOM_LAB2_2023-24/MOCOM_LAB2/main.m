@@ -62,7 +62,7 @@ qi=[0,pi/2,0,-pi/2,0,0,0];
 qf=[0,0,0,0,0,0,0];
 plot_link_chain(qi,qf,iTj_q,linkType)
 %1.4.c
-qi=[1.3,0.1,0.1,1.0,0.2,0.3,1.3];
+qi=[1.3,0.1,0.1,1,0.2,0.3,1.3];
 qf=[2,2,2,2,2,2,2];
 plot_link_chain(qi,qf,iTj_q,linkType)
 %1.4.d
