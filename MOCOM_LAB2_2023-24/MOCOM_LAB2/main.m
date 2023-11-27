@@ -66,3 +66,13 @@ qi=[1.3,0.1,0.1,1,0.2,0.3,1.3];
 qf=[2,2,2,2,2,2,2];
 plot_link_chain(qi,qf,iTj_q,linkType)
 %1.4.d
+%% Q1.5
+qi=q;
+qf = [pi/4 pi/2 -pi/8 -pi/2 pi/4 2/3*pi 0];
+config_step=geom_model;
+for i=1:size(linkType,2)
+    q_step=qi; q_step(i)=qf(i);
+    plot_link_chain(qi,q_step,config_step,linkType);
+    config_step=GetDirectGeometry(q_step,config_step,linkType);
+    
+end
