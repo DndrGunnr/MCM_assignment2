@@ -70,9 +70,7 @@ plot_link_chain(qi,qf,iTj_q,linkType)
 qi=q;
 qf = [pi/4 pi/2 -pi/8 -pi/2 pi/4 2/3*pi 0];
 config_step=geom_model;
-for i=1:size(linkType,2)
-    q_step=qi; q_step(i)=qf(i);
-    plot_link_chain(qi,q_step,config_step,linkType);
-    config_step=GetDirectGeometry(q_step,config_step,linkType);
-    
-end
+% the complete movement is done one joint at a time
+plotJointSteps(qf,config_step,linkType);
+qf=[pi,pi,pi,pi,pi,pi,pi];
+plotJointSteps(qf,config_step,linkType);
