@@ -3,7 +3,7 @@ function plot_link_chain(qi,qf,iTj_q,linkType)
 
     %computing intermediate steps from initial to final configuration
     joint_positions=stepJointPositions(qi,qf,iTj_q,numberOfSteps,linkType);
-    %bounds 
+    %bounds for the plot
     bounds_m=zeros(3,2);
     for i=1:3
         coords=joint_positions(i,:,:);
@@ -15,6 +15,9 @@ function plot_link_chain(qi,qf,iTj_q,linkType)
     xlim(bounds_m(1,:));
     ylim(bounds_m(2,:));
     zlim(bounds_m(3,:));
+    xlabel('x-axis');
+    ylabel('y-axis');
+    zlabel('z-axis');
     grid on;
     for i=1:numberOfSteps
         % Update line data

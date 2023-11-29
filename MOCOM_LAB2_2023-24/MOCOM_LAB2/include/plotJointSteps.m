@@ -20,6 +20,9 @@ for j=1:numberOfLinks
     xlim(bounds_m(1,:));
     ylim(bounds_m(2,:));
     zlim(bounds_m(3,:));
+    xlabel('x-axis');
+    ylabel('y-axis');
+    zlabel('z-axis');
     grid on;
     for i=1:numberOfSteps
         % Update line data

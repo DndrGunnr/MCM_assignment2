@@ -52,25 +52,36 @@ end
 % Hint: use plot3() and line() matlab functions. 
 close all;
 %1.4.a
+figure;
 qi = q;
 qf = [pi/4 pi/2 -pi/8 -pi/2 pi/4 2/3*pi 0];
 iTj_q=geom_model;
 
 plot_link_chain(qi,qf,iTj_q,linkType)
 %1.4.b
+figure;
 qi=[0,pi/2,0,-pi/2,0,0,0];
 qf=[0,0,0,0,0,0,0];
 plot_link_chain(qi,qf,iTj_q,linkType)
 %1.4.c
+figure;
 qi=[1.3,0.1,0.1,1,0.2,0.3,1.3];
 qf=[2,2,2,2,2,2,2];
 plot_link_chain(qi,qf,iTj_q,linkType)
 %1.4.d
 %% Q1.5
+%a
+close all;
+figure;
 qi=q;
 qf = [pi/4 pi/2 -pi/8 -pi/2 pi/4 2/3*pi 0];
 config_step=geom_model;
-% the complete movement is done one joint at a time
 plotJointSteps(qf,config_step,linkType);
-qf=[pi,pi,pi,pi,pi,pi,pi];
+%b
+figure;
+qf=[0,pi/2,0,-pi/2,0,0,0];
+plotJointSteps(qf,config_step,linkType);
+%c
+figure;
+qf=[pi,pi/2,0,-pi,0,0,0];
 plotJointSteps(qf,config_step,linkType);
