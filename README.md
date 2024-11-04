@@ -1,1 +1,2 @@
-# MCM_assignment2
+# Modelling And Control of Manipulator\\
+Lab 2
