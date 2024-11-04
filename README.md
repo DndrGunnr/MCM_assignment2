@@ -1,2 +1,2 @@
-# Modelling And Control of Manipulator\\
+# Modelling And Control of Manipulators  
 Lab 2
